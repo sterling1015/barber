@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbería XYZ</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="container">
+            <div class="logo">Barbería XYZ</div>
+            <!-- Menú de navegación responsive -->
+            <nav>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Sobre Nosotros</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="#reservations" class="btn-reserva">Reserva Ahora</a>
+        </div>
+    </header>
+
+    <!-- Sección de Bienvenida -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Transforma tu estilo con los mejores cortes</h1>
+            <a href="#reservations" class="btn">Reserva tu cita hoy</a>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <img src="images/corte-cabello.jpg" alt="Corte de Cabello">
+                    <h3>Corte de Cabello</h3>
+                    <p>Desde $20</p>
+                </div>
+                <div class="service-item">
+                    <img src="images/afeitado.jpeg" alt="Afeitado">
+                    <h3>Afeitado Clásico</h3>
+                    <p>Desde $15</p>
+                </div>
+                <div class="service-item">
+                    <img src="images/arreglo-barba.jpg" alt="Arreglo de Barba">
+                    <h3>Arreglo de Barba</h3>
+                    <p>Desde $10</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Galería -->
+    <section id="galeria" class="gallery">
+        <div class="container">
+            <h2>Nuestro Trabajo</h2>
+            <div class="gallery-grid">
+                <img src="images/corte-cabello.jpg" alt="Corte 1">
+                <img src="images/arreglo-barba.jpg" alt="Corte 2">
+                <img src="images/corte-cabello.jpg" alt="Corte 3">
+                <img src="images/arreglo-barba.jpg" alt="Corte 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Reservas -->
+    <section id="reservations" class="reservations">
+        <div class="container">
+            <h2>Reserva tu Cita por WhatsApp</h2>
+            <div class="container-info">
+                <p>Haz clic en el ícono para enviarnos un mensaje directamente.</p>
+                <a href="https://wa.me/+573213993321?text=Hola%20me%20gustaría%20reservar%20una%20cita%20para%20un%20corte%20de%20cabello."
+                    target="_blank" class="whatsapp-icon">
+                    <img src="images/whatsapp-icon.png" alt="WhatsApp">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Sobre Nosotros -->
+    <section id="about" class="about-us">
+        <div class="container">
+            <h2>Conócenos</h2>
+            <p>En Barbería XYZ, ofrecemos los mejores servicios de cortes y afeitados, garantizando un estilo único y
+                personalizado para cada cliente. Nuestro equipo está compuesto por barberos expertos con años de
+                experiencia en el arte de la barbería.</p>
+            <div class="team">
+                <div class="team-member">
+                    <img src="images/team-member.png" alt="Barbero 1">
+                    <h3>John Doe</h3>
+                    <p>Especialista en cortes clásicos</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/team-member.png" alt="Barbero 2">
+                    <h3>Doe John</h3>
+                    <p>Experto en afeitados tradicionales</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            <p>Información de contacto</p>
+        </div>
+    </section>
+
+    <!-- Botón de volver al inicio -->
+    <button id="back-to-top" title="Volver al inicio">&#8679;</button>
+
+    <section id="ubicacion" class="location">
+        <div class="container">
+            <h2>Visítanos</h2>
+            <p>Estamos ubicados en [dirección de la barbería].</p>
+            <div id="map" style="width:100%;height:400px;"></div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Barbería XYZ. Todos los derechos reservados.</p>
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFNbQDqxL39tDzpGyoLdsbcIOMc-Kkkqs&callback=initMap"
+        async defer></script>
+    <script>
+        function initMap() {
+            // Coordenadas de la ubicación de la barbería
+            const barberiaUbicacion = { lat: 40.712776, lng: -74.005974 }; // Reemplaza con las coordenadas reales
+
+            // Crear el mapa y centrarlo en la ubicación de la barbería
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: barberiaUbicacion,
+            });
+
+            // Añadir un marcador en la ubicación de la barbería
+            const marker = new google.maps.Marker({
+                position: barberiaUbicacion,
+                map: map,
+                title: "Barbería",
+            });
+        }
+    </script>
+</body>
+
+</html>
