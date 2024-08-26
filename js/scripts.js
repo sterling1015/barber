@@ -23,17 +23,17 @@ document.getElementById("back-to-top").addEventListener("click", function () {
 
 
 // Rervaciones
-document.addEventListener('DOMContentLoaded', function () {
-    const formReserva = document.getElementById('form-reserva');
-    formReserva.addEventListener('submit', function (event) {
-        event.preventDefault();
-        alert('¡Reserva realizada con éxito!');
-    });
+// document.addEventListener('DOMContentLoaded', function () {
+//     const formReserva = document.getElementById('form-reserva');
+//     formReserva.addEventListener('submit', function (event) {
+//         event.preventDefault();
+//         alert('¡Reserva realizada con éxito!');
+//     });
 
-    const formContacto = document.getElementById('form-contacto');
-    formContacto.addEventListener('submit', function (event) {
-        event.preventDefault();
-        alert('¡Mensaje enviado con éxito!');
-    });
+//     const formContacto = document.getElementById('form-contacto');
+//     formContacto.addEventListener('submit', function (event) {
+//         event.preventDefault();
+//         alert('¡Mensaje enviado con éxito!');
+//     });
 
-});
+// });
