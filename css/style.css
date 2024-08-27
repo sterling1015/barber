@@ -4,7 +4,6 @@
     --white-color: #fff;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
@@ -17,14 +16,9 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    color: var(--secondary-color);;
+    color: var(--secondary-color);
+    ;
     line-height: 1.6;
-}
-
-header {
-    background-color: var(--secondary-color);;
-    color: var(--white-color);;
-    padding: 20px 0;
 }
 
 .container {
@@ -33,53 +27,181 @@ header {
     margin: 0 auto;
 }
 
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
+
+
+/* Definimos un ancho fluido y una altura fija para nuestro menú */
+header {
+    background: var(--secondary-color);
+    height: 60px;
+    position: relative;
+    width: 100%;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
+/* El logo sera flotado a la izquierda */
+#logo {
+    float: left;
+    padding: 6px 20px;
+    width: auto;
+    height: 60px;
+
+    a {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+        line-height: 44px;
+        text-transform: uppercase;
+    }
 }
 
-nav ul li {
-    margin-left: 20px;
+/* Fijamos nuestro nav en 100% ancho */
+#menu {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+
+    /* Quitamos estilos por defecto de el tag UL */
+    ul {
+        max-height: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 14px;
+    }
+
+    /* Convertimos nuestra lista de enlaces en un menú horizontal */
+    li {
+        display: block;
+        background: var(--secondary-color);
+        text-transform: uppercase;
+        text-align: center;
+        border-bottom: 1px solid var(--secondary-color);
+
+        /* Damos estilo a nuestros enlaces */
+        a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            line-height: 60px;
+            padding: 0 26px;
+
+            &:active,
+            &:focus {
+                color: var(--primary-color);
+            }
+        }
+    }
+
+    /* Agregamos una animación al despliegue del menú */
+    .open-menu {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+        max-height: 400px;
+        transition: max-height .4s ease;
+    }
 }
 
-nav ul li a {
-    color: var(--white-color);;
-    text-decoration: none;
+/* Botón mostrar menú */
+#nav-mobile {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    float: right;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 0;
+    top: -60px;
+    opacity: 0.6;
+
+    /* Agregaremos esta clase a #nav-mobile, cuando el menu mobile haya sido desplegado */
+    &.nav-open {
+        opacity: 1;
+    }
+
+    span {
+        display: block;
+        width: 60%;
+        margin: 4px auto;
+        height: 4px;
+        background: var(--white-color)
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* ocultamos botón #nav-mobile */
+    #nav-mobile {
+        display: none;
+    }
+
+    /* Nuestro nav con id #menu lo flotaremos a la derecha */
+    #menu {
+        width: auto;
+        float: right;
+        top: 0;
+        position: relative;
+
+        .open-menu {
+            box-shadow: none;
+        }
+
+        /* Hacemos reset de max-height */
+        ul {
+            max-height: inherit;
+        }
+
+        /* Alineamos los items de forma horizontal */
+        li {
+            float: left;
+            border: 0;
+            background: transparent;
+
+            a {
+                display: block;
+                color: var(--white-color);
+                padding: 0 26px;
+
+                &:hover {
+                    color: var(--primary-color);
+                    background: var(--secondary-color);
+                }
+            }
+        }
+    }
 }
 
 .btn-reserva {
     background-color: var(--primary-color);
     padding: 10px 20px;
-    color: var(--secondary-color);;
+    color: var(--secondary-color);
+    ;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
 }
 
-.hero {
+.home {
     background: url('../images/barber-bg-3.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--white-color);;
+    color: var(--white-color);
+    ;
     text-align: center;
 }
 
-.hero-content h1 {
+.home-content h1 {
     font-size: 3em;
 }
 
-.hero .btn {
+.home .btn {
     background-color: var(--primary-color);
     padding: 15px 30px;
-    color: var(--secondary-color);;
+    color: var(--secondary-color);
+    ;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -157,7 +279,8 @@ form button {
     border: none;
     border-radius: 5px;
     font-weight: bold;
-    color: var(--secondary-color);;
+    color: var(--secondary-color);
+    ;
     cursor: pointer;
 }
 
@@ -205,8 +328,10 @@ form button:hover {
 }
 
 footer {
-    background-color: var(--secondary-color);;
-    color: var(--white-color);;
+    background-color: var(--secondary-color);
+    ;
+    color: var(--white-color);
+    ;
     padding: 20px 0;
     text-align: center;
 }
@@ -216,7 +341,8 @@ footer .social-media {
 }
 
 footer .social-media a {
-    color: var(--white-color);;
+    color: var(--white-color);
+    ;
     text-decoration: none;
     margin: 0 10px;
 }
